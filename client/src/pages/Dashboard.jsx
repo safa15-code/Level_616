@@ -37,8 +37,7 @@ export default function Dashboard() {
   const byPriority = [...rows].sort((a, b) => b.priority - a.priority) // biggest gap first
 
   const chartData = rows
-    .filter(r => r.type === 'interest')                         // interests only
-    .map(r => ({ name: r.name, Desired: r.desiredHoursPerWeek, Actual: r.thisWeek }))
+  .map(r => ({ name: r.name, Desired: r.desiredHoursPerWeek, Actual: r.thisWeek }))
 
   const totalHours = rows.reduce((sum, r) => sum + r.hours, 0)
   const weekHours = rows.reduce((sum, r) => sum + r.thisWeek, 0)
